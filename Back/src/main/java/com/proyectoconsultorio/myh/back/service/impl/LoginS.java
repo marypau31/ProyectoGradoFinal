@@ -1,15 +1,15 @@
-package com.proyectoconsultorio.myh.back.model.service.impl;
+package com.proyectoconsultorio.myh.back.service.impl;
 
 import com.proyectoconsultorio.myh.back.entity.PersonaE;
 import com.proyectoconsultorio.myh.back.entity.UsuarioE;
 import com.proyectoconsultorio.myh.back.model.Usuario;
-import com.proyectoconsultorio.myh.back.model.mapper.LoginMapper;
-import com.proyectoconsultorio.myh.back.model.repository.AccesoR;
-import com.proyectoconsultorio.myh.back.model.repository.AccesoUsuarioR;
-import com.proyectoconsultorio.myh.back.model.repository.PersonaR;
-import com.proyectoconsultorio.myh.back.model.repository.TrabajadorR;
-import com.proyectoconsultorio.myh.back.model.repository.UsuarioR;
-import com.proyectoconsultorio.myh.back.model.service.ILoginS;
+import com.proyectoconsultorio.myh.back.mapper.LoginMapper;
+import com.proyectoconsultorio.myh.back.repository.AccesoR;
+import com.proyectoconsultorio.myh.back.repository.AccesoUsuarioR;
+import com.proyectoconsultorio.myh.back.repository.PersonaR;
+import com.proyectoconsultorio.myh.back.repository.TrabajadorR;
+import com.proyectoconsultorio.myh.back.repository.UsuarioR;
+import com.proyectoconsultorio.myh.back.service.ILoginS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

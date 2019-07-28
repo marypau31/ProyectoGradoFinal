@@ -1,7 +1,7 @@
 package com.proyectoconsultorio.myh.back.controller;
 
 import com.proyectoconsultorio.myh.back.model.Usuario;
-import com.proyectoconsultorio.myh.back.model.service.ILoginS;
+import com.proyectoconsultorio.myh.back.service.ILoginS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;

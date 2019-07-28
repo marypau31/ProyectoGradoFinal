@@ -1,4 +1,4 @@
-package com.proyectoconsultorio.myh.back.model.repository;
+package com.proyectoconsultorio.myh.back.repository;
 
 import com.proyectoconsultorio.myh.back.entity.MunicipioE;
 import java.io.Serializable;

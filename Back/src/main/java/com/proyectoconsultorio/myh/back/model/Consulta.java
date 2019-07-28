@@ -1,6 +1,5 @@
 package com.proyectoconsultorio.myh.back.model;
 
-import com.proyectoconsultorio.myh.back.model.custom.Fechas;
 import java.io.Serializable;
 import java.util.List;
 

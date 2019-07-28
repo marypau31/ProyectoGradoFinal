@@ -1,4 +1,4 @@
-package com.proyectoconsultorio.myh.back.model.mapper;
+package com.proyectoconsultorio.myh.back.mapper;
 
 import com.proyectoconsultorio.myh.back.entity.AccesoE;
 import com.proyectoconsultorio.myh.back.entity.AccesoUsuarioE;

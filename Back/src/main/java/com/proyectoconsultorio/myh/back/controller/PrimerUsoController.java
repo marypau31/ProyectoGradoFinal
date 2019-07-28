@@ -6,7 +6,7 @@ import com.proyectoconsultorio.myh.back.model.Enfermedad;
 import com.proyectoconsultorio.myh.back.model.Municipio;
 import com.proyectoconsultorio.myh.back.model.Persona;
 import com.proyectoconsultorio.myh.back.model.Sivigila;
-import com.proyectoconsultorio.myh.back.model.service.IPrimerUsoS;
+import com.proyectoconsultorio.myh.back.service.IPrimerUsoS;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

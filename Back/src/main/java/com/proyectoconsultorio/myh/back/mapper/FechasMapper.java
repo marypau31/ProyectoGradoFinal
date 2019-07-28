@@ -1,6 +1,6 @@
-package com.proyectoconsultorio.myh.back.model.mapper;
+package com.proyectoconsultorio.myh.back.mapper;
 
-import com.proyectoconsultorio.myh.back.model.custom.Fechas;
+import com.proyectoconsultorio.myh.back.model.Fechas;
 import java.util.Calendar;
 import java.util.Date;
 

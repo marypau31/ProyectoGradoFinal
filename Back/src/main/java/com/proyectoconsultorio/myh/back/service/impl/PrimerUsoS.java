@@ -1,4 +1,4 @@
-package com.proyectoconsultorio.myh.back.model.service.impl;
+package com.proyectoconsultorio.myh.back.service.impl;
 
 import com.proyectoconsultorio.myh.back.entity.AccesoE;
 import com.proyectoconsultorio.myh.back.entity.AccesoUsuarioE;
@@ -15,17 +15,17 @@ import com.proyectoconsultorio.myh.back.model.Enfermedad;
 import com.proyectoconsultorio.myh.back.model.Municipio;
 import com.proyectoconsultorio.myh.back.model.Persona;
 import com.proyectoconsultorio.myh.back.model.Sivigila;
-import com.proyectoconsultorio.myh.back.model.mapper.PrimerUsoMapper;
-import com.proyectoconsultorio.myh.back.model.repository.AccesoR;
-import com.proyectoconsultorio.myh.back.model.repository.AccesoUsuarioR;
-import com.proyectoconsultorio.myh.back.model.repository.DepartamentoR;
-import com.proyectoconsultorio.myh.back.model.repository.EnfermedadR;
-import com.proyectoconsultorio.myh.back.model.repository.MunicipioR;
-import com.proyectoconsultorio.myh.back.model.repository.PersonaR;
-import com.proyectoconsultorio.myh.back.model.repository.SivigilaR;
-import com.proyectoconsultorio.myh.back.model.repository.TrabajadorR;
-import com.proyectoconsultorio.myh.back.model.repository.UsuarioR;
-import com.proyectoconsultorio.myh.back.model.service.IPrimerUsoS;
+import com.proyectoconsultorio.myh.back.mapper.PrimerUsoMapper;
+import com.proyectoconsultorio.myh.back.repository.AccesoR;
+import com.proyectoconsultorio.myh.back.repository.AccesoUsuarioR;
+import com.proyectoconsultorio.myh.back.repository.DepartamentoR;
+import com.proyectoconsultorio.myh.back.repository.EnfermedadR;
+import com.proyectoconsultorio.myh.back.repository.MunicipioR;
+import com.proyectoconsultorio.myh.back.repository.PersonaR;
+import com.proyectoconsultorio.myh.back.repository.SivigilaR;
+import com.proyectoconsultorio.myh.back.repository.TrabajadorR;
+import com.proyectoconsultorio.myh.back.repository.UsuarioR;
+import com.proyectoconsultorio.myh.back.service.IPrimerUsoS;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.proyectoconsultorio.myh.back.model.service;
+package com.proyectoconsultorio.myh.back.service;
 
 import com.proyectoconsultorio.myh.back.model.Acceso;
 import com.proyectoconsultorio.myh.back.model.Departamento;

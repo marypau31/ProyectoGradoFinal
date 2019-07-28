@@ -1,4 +1,4 @@
-package com.proyectoconsultorio.myh.back.model.custom;
+package com.proyectoconsultorio.myh.back.model;
 
 import java.io.Serializable;
 
