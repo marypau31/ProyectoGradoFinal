@@ -1,9 +1,9 @@
 package com.proyectoconsultorio.myh.back.mapper;
 
-import com.proyectoconsultorio.myh.back.model.Fechas;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.proyectoconsultorio.myh.back.model.Customize.Fechas;
 
 public class FechasMapper {
 	

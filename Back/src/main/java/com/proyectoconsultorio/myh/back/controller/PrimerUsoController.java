@@ -1,12 +1,5 @@
 package com.proyectoconsultorio.myh.back.controller;
 
-import com.proyectoconsultorio.myh.back.model.Acceso;
-import com.proyectoconsultorio.myh.back.model.Departamento;
-import com.proyectoconsultorio.myh.back.model.Enfermedad;
-import com.proyectoconsultorio.myh.back.model.Municipio;
-import com.proyectoconsultorio.myh.back.model.Persona;
-import com.proyectoconsultorio.myh.back.model.Sivigila;
-import com.proyectoconsultorio.myh.back.service.IPrimerUsoS;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.proyectoconsultorio.myh.back.model.Acceso;
+import com.proyectoconsultorio.myh.back.model.Departamento;
+import com.proyectoconsultorio.myh.back.model.Enfermedad;
+import com.proyectoconsultorio.myh.back.model.Municipio;
+import com.proyectoconsultorio.myh.back.model.Persona;
+import com.proyectoconsultorio.myh.back.model.Sivigila;
+import com.proyectoconsultorio.myh.back.service.IPrimerUsoS;
 
 @RestController
 @RequestMapping("/V1/PrimerUso")

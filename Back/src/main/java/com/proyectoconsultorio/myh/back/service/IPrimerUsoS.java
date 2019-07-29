@@ -1,12 +1,13 @@
 package com.proyectoconsultorio.myh.back.service;
 
+import java.util.List;
+
 import com.proyectoconsultorio.myh.back.model.Acceso;
 import com.proyectoconsultorio.myh.back.model.Departamento;
 import com.proyectoconsultorio.myh.back.model.Enfermedad;
 import com.proyectoconsultorio.myh.back.model.Municipio;
 import com.proyectoconsultorio.myh.back.model.Persona;
 import com.proyectoconsultorio.myh.back.model.Sivigila;
-import java.util.List;
 
 public interface IPrimerUsoS {
 	

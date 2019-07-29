@@ -2,6 +2,8 @@ package com.proyectoconsultorio.myh.back.model;
 
 import java.io.Serializable;
 
+import com.proyectoconsultorio.myh.back.model.Customize.Fechas;
+
 public class Incapacidad implements Serializable {
 
      private static final long serialVersionUID = 1L;

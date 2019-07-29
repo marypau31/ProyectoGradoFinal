@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+     <h:head>
+          <h:outputStylesheet name="./css/default.css"/>
+          <h:outputStylesheet name="./css/login.css"/>
+          <title>Login</title>
+     </h:head>
+       
+     <h:body>
+          <h:form>
+               <p:growl showDetail="true" life="2500" />
+               <p:panel id="pnl" class="box">
+                    <div align="center">
+                    <h1>INICIAR SESIÓN</h1>
+                    </div>
+                    <br/>
+                    <p:messages id="msg" showSummary="false" showDetail="true"/>
+                    <h:panelGrid columns="2" cellpadding="5" id="grid">
+                         <p:outputLabel value="Usuario"/>
+                         <p:inputText id="user" required="true" value="#{loginBean.usuario.username}" 
+                                      validatorMessage="Se requiere el usuario" requiredMessage="Se requiere el usuario"/>
+
+                         <p:outputLabel value="Contraseña"/>
+                         <p:password id="pass" required="true" value="#{loginBean.usuario.password}" 
+                                     validatorMessage="Se requiere la contraseña" requiredMessage="Se requiere la contraseña"/>
+                    </h:panelGrid>
+                    <br/>
+                    <div align="center">
+                         <p:commandButton icon="ui-icon-key" value="Iniciar Sesión" action="#{loginBean.iniciarSesion()}" update="msg, grid"/>
+                    <br/>
+                    <p:link value="Crear cuenta" outcome="PrimerUsuario" rendered="true"/>
+                    </div>
+               </p:panel>
+
+               <p:dialog widgetVar="cargando" modal="true" closable="false" resizable="false" maximizable="false">
+                    <h2>INICIANDO SESIÓN</h2>
+                    <br/>
+                    <p:graphicImage library="images" name="loading.gif"/>
+               </p:dialog>
+          </h:form>
+     </h:body>
+
+</html>

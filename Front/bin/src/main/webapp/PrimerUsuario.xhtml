@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <h:head>
+          <h:outputStylesheet name="./css/default.css"/>
+          <title>Crear Usuario</title>
+     </h:head>
+     <h:body>
+          <h:form>
+               <p:growl id="msg" showDetail="true" life="2500" />
+               
+               <p:fieldset legend="Datos personales">
+                    <h:panelGrid columns="3" cellpadding="5">
+                         <p:outputLabel for="nombres" value="Nombres:"/>
+                         <p:inputText id="nombres" required="true" value="#{crearUsuarioBean.persona.nombres}" >
+                              <f:validateLength minimum="3" maximum="100"/>
+                              <p:ajax update="nombresMsg" event="keyup"/>
+                         </p:inputText>
+                         <p:message for="nombres" id="nombresMsg"/>
+
+                         <p:outputLabel for="apellidos" value="Apellidos:"/>
+                         <p:inputText id="apellidos" required="true" value="#{crearUsuarioBean.persona.apellidos}">
+                              <f:validateLength minimum="3" maximum="100"/>
+                              <p:ajax update="apellidosMsg" event="keyup"/>
+                         </p:inputText>
+                         <p:message for="apellidos" id="apellidosMsg"/>
+
+                         <p:outputLabel for="tipoDoc" value="Tipo documento:"/>
+                         <p:selectOneMenu id="tipoDoc" required="true" value="#{crearUsuarioBean.persona.tipoDocumento}">
+                              <f:selectItem itemLabel="Seleccionar ..." itemValue="" />
+                              <f:selectItems value="#{comboBoxesBean.documentos}"/>
+                         </p:selectOneMenu>
+                         <p:message for="tipoDoc" id='tipoDocMsg'/>
+                              
+                         <p:outputLabel for="numDoc" value="Número documento:"/>
+                         <p:inputText id="numDoc" required="true" value="#{crearUsuarioBean.persona.numeroDocumento}">
+                              <f:validateLength minimum="5" maximum="16"/>
+                              <p:ajax update="apellidosMsg" event="keyup"/>
+                         </p:inputText>
+                         <p:message for="numDoc" id="numDocMsg"/>
+                    </h:panelGrid>
+               </p:fieldset>
+
+               <br/>
+
+               <p:fieldset legend="Datos Trabajador">
+                    <h:panelGrid columns="3" cellpadding="5">
+                         <p:outputLabel for="ingreso" value="Fecha Ingreso:"/>
+                         <p:calendar id="ingreso" locale="es" navigator="true" maxdate="#{restrictedDateBean.maximumDate}" pattern="dd-MMMMM-yyyy"
+                                     showButtonPanel="true" readonlyInput="true" yearRange="c-10:c+10" required="true"
+                                     value="#{crearUsuarioBean.persona.trabajador.fechaIngreso}"/>
+                         <p:message for="ingreso" id="ingresoMsg"/>
+                         
+                         <p:outputLabel for="cargo" value="Cargo:"/>
+                         <p:inputText id="cargo" required="true" value="#{crearUsuarioBean.persona.trabajador.cargo}">
+                              <f:validateLength minimum="5" maximum="25"/>
+                              <p:ajax update="apellidosMsg" event="keyup"/>
+                         </p:inputText>
+                         <p:message for="cargo" id="cargoMsg"/>
+                    </h:panelGrid>
+                    
+                    
+               </p:fieldset>
+
+               <br/>
+
+               <p:fieldset legend="Datos Usuario">
+                    <h:panelGrid columns="3" cellpadding="5">
+                         <p:outputLabel for="user" value="Usuario:"/>
+                         <p:inputText id="user" required="true" value="#{crearUsuarioBean.persona.trabajador.usuario.username}" >
+                              <f:validateLength minimum="5" maximum="20"/>
+                              <p:ajax update="apellidosMsg" event="keyup"/>
+                         </p:inputText>
+                         <p:message for="user" id="userMsg"/>
+                         
+                         <p:outputLabel for="pass1" value="Contraseña:"/>
+                         <p:password id="pass1" required="true" value="#{crearUsuarioBean.persona.trabajador.usuario.password}" match="pass2"
+                                     promptLabel="Ingrese clave">
+                              <f:validateLength minimum="5" maximum="20"/>
+                              <p:ajax update="apellidosMsg" event="keyup"/>
+                         </p:password>
+                         <p:message for="pass1" id="pass1Msg"/>
+                         
+                         <p:outputLabel for="pass2" value="Repetir contraseña:"/>
+                         <p:password id="pass2" required="true">
+                              <f:validateLength minimum="5" maximum="20"/>
+                              <p:ajax update="apellidosMsg" event="keyup"/>
+                         </p:password>
+                         <p:message for="pass2" id="pass2Msg" />
+                    </h:panelGrid>
+               </p:fieldset>
+               
+               <br/>
+               <div align="center">
+                    <p:commandButton value="Ingresar Primer Usuario">
+                    </p:commandButton>
+               </div>
+               
+               
+               <p:confirmDialog global="true" widgetVar="confirmation">
+                    <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="pi pi-check"/>
+                    <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="pi pi-times"/>
+               </p:confirmDialog>
+          </h:form>
+          <h:outputScript library="js" name="SpanishLocale.js"/>
+     </h:body>
+</html>
+

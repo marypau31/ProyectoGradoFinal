@@ -1,6 +1,8 @@
 package com.proyectoconsultorio.myh.back.mapper;
 
-import com.proyectoconsultorio.myh.back.entity.AccesoE;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.proyectoconsultorio.myh.back.entity.AccesoUsuarioE;
 import com.proyectoconsultorio.myh.back.entity.PersonaE;
 import com.proyectoconsultorio.myh.back.entity.UsuarioE;
@@ -9,9 +11,6 @@ import com.proyectoconsultorio.myh.back.model.AccesoUsuario;
 import com.proyectoconsultorio.myh.back.model.Persona;
 import com.proyectoconsultorio.myh.back.model.Trabajador;
 import com.proyectoconsultorio.myh.back.model.Usuario;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class LoginMapper {
 	
@@ -22,23 +21,14 @@ public class LoginMapper {
 		return entity;
 	}
 	
-	public Usuario mapperOutIniciarSesion(UsuarioE entity) {
+	public Usuario mapperOutIniciarSesion(List<AccesoUsuarioE> listE, UsuarioE entityU, PersonaE entityP) {
 		Usuario model = new Usuario();
-		model.setUsername(entity.getUsername());
-		model.setId(entity.getId());
-		return model;
-	}
-	
-	public Usuario mapperOutIniciarSesion(Usuario model, PersonaE entity) {
+		model.setUsername(entityU.getUsername());
+		model.setId(entityU.getId());
 		model.setTrabajador(new Trabajador());
 		model.getTrabajador().setPersona(new Persona());
-		model.getTrabajador().getPersona().setId(entity.getId());
-		model.getTrabajador().getPersona().setNombres(entity.getNombres());
-		model.getTrabajador().getPersona().setApellidos(entity.getApellidos());
-		return model;
-	}
-	
-	public Usuario mapperOutIniciarSesion(Usuario model, List<AccesoUsuarioE> listE) {
+		model.getTrabajador().getPersona().setNombres(entityP.getNombres());
+		model.getTrabajador().getPersona().setApellidos(entityP.getApellidos());
 		model.setAccesoUsuarioList(new ArrayList<AccesoUsuario>());
 		for (AccesoUsuarioE entity : listE) {
 			AccesoUsuario accesoUsuario = new AccesoUsuario();
@@ -49,19 +39,9 @@ public class LoginMapper {
 			accesoUsuario.setModificar(entity.getModificar());
 			accesoUsuario.setAcceso(new Acceso());
 			accesoUsuario.getAcceso().setId(entity.getAcceso().getId());
+			accesoUsuario.getAcceso().setModulo(entity.getAcceso().getModulo());
+			accesoUsuario.getAcceso().setDescripcion(entity.getAcceso().getDescripcion());
 			model.getAccesoUsuarioList().add(accesoUsuario);
-		}
-		return model;
-	}
-	
-	public Usuario mapperOutIniciarSesion(Usuario model, AccesoE entity) {
-		for (AccesoUsuario iterable : model.getAccesoUsuarioList()) {
-			if (Objects.equals(iterable.getAcceso().getId(), entity.getId())) {
-				iterable.getAcceso().setModulo(entity.getModulo());
-				iterable.getAcceso().setDescripcion(entity.getDescripcion());
-				break;
-			}
-			
 		}
 		return model;
 	}

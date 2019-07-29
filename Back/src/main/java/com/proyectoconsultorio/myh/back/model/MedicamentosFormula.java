@@ -13,6 +13,7 @@ public class MedicamentosFormula implements Serializable {
 
      public MedicamentosFormula() {
      }
+     
      public Long getId() {
           return id;
      }
